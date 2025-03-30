@@ -435,7 +435,7 @@ const HolidayTable = () => {
       (a, b) => new Date(a.holiday).getTime() - new Date(b.holiday).getTime()
     );
     setData(sortedData);
-  }, [data]);
+  }, []);
 
   return (
     <div>
