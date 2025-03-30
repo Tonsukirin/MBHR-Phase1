@@ -1,0 +1,29 @@
+.ant-popover .ant-popover-inner {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+.ant-popover-title {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 0px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.ant-popover-inner-content {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.half-circle {
+  width: 50vw;
+  height: 50vw;
+  background: linear-gradient(-45deg, #91d5ff 50%, #ffd591 50%);
+  border-radius: 50%;
+}

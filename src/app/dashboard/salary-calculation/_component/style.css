@@ -1,0 +1,30 @@
+.custom-row {
+  background-color: transparent !important;
+}
+
+.custom-row.even-row td {
+  background-color: #ffffff !important;
+}
+
+.custom-row.odd-row td {
+  background-color: #fafafa !important;
+}
+
+.ant-table-wrapper.no-data .ant-table-tbody > tr > td {
+  padding: 0 !important;
+}
+
+.custom-dropdown-style {
+  animation: antSlideDownIn 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes antSlideDownIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

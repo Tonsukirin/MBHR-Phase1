@@ -1,0 +1,84 @@
+.primary {
+  background-color: #f9991e !important;
+  color: white !important;
+  border: transparent !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: min-content !important;
+}
+
+.primary:hover {
+  background-color: #fa8c16 !important;
+}
+
+.primary:active {
+  background-color: #f57300 !important;
+}
+
+.secondary {
+  background-color: #fff7e6 !important;
+  color: #f48625 !important;
+  border: transparent !important;
+  box-shadow: none;
+}
+
+.secondary:hover {
+  background-color: #ffe7ba !important;
+}
+
+.secondary:active {
+  background-color: #ffd591 !important;
+}
+
+.flat {
+  background-color: #efefef !important;
+  color: #404040 !important;
+  border: transparent !important;
+}
+
+.flat:hover {
+  background-color: #e0e0e0 !important;
+}
+
+.flat:active {
+  background-color: #cccccc !important;
+}
+
+.text-orange {
+  background-color: transparent !important;
+  color: #f9991e !important;
+  border: transparent !important;
+}
+.text-orange:hover {
+  color: #ffa940 !important;
+}
+.text-orange:active {
+  color: #f48625 !important;
+}
+
+.text-black {
+  background-color: transparent !important;
+  color: #404040 !important;
+  border: transparent !important;
+}
+.text-black:hover {
+  color: #6b6b6b !important;
+}
+.text-black:active {
+  color: #292929 !important;
+}
+
+.primary:disabled,
+.secondary:disabled,
+.flat:disabled,
+.text-orange:disabled,
+.text-black:disabled {
+  color: #00000040 !important;
+}
+
+.primary:disabled,
+.secondary:disabled,
+.flat:disabled {
+  background-color: #f6f6f6 !important;
+}

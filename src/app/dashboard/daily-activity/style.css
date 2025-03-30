@@ -1,0 +1,73 @@
+.ant-tabs-tab.ant-tabs-tab-active {
+  font-weight: 300 !important;
+}
+
+.ant-tabs-tab {
+  font-weight: 300 !important;
+}
+
+.ant-tabs-top > .ant-tabs-nav::before {
+  border-bottom: none !important;
+}
+
+.custom-row {
+  background-color: transparent !important;
+}
+
+.custom-row.even-row td {
+  background-color: #ffffff !important;
+}
+
+.custom-row.odd-row td {
+  background-color: #fafafa !important;
+}
+
+td.ant-table-cell.date-column.unassigned-shift {
+  background-color: #e0e0e0 !important;
+}
+
+.ant-table .ant-table-tbody .ant-table-cell.date-column {
+  border-left: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Remove borders from the fixed columns */
+.ant-table .ant-table-fixed .ant-table-cell {
+  border-right: none !important;
+}
+
+.ant-table .ant-table-tbody .ant-table-cell.date-column {
+  padding: 0 !important;
+}
+
+.ant-table .ant-table-thead .ant-table-cell.date-column {
+  background-color: #fff7e6 !important;
+  padding: 0 !important;
+}
+
+.ant-table .ant-table-thead .ant-table-cell.date-column.sat-sun-column {
+  background-color: #ffd591 !important;
+}
+
+/* Custom half circle */
+.half-circle {
+  width: 50vw;
+  height: 50vw;
+  background: linear-gradient(-45deg, #91d5ff 50%, #ffd591 50%);
+  border-radius: 50%;
+}
+
+.custom-dropdown-style {
+  animation: antSlideDownIn 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes antSlideDownIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

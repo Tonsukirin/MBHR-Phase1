@@ -1,0 +1,111 @@
+.custom-calendar .employee-card {
+  position: relative;
+  height: 32px;
+  background: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.custom-calendar .payrate-bar {
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.custom-calendar
+  .ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-calendar-date {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.custom-calendar .ant-picker-cell-inner.ant-picker-calendar-date {
+  height: 108px !important;
+}
+
+.custom-calendar .ant-picker-calendar-date-value {
+  padding-right: 5.93px !important;
+}
+
+.custom-calendar .ant-picker-calendar-date-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-calendar .ant-picker-cell-inner {
+  background-color: transparent !important;
+  transition: none !important;
+}
+
+.custom-calendar .ant-picker-cell {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-spacing: 0;
+  border-collapse: collapse;
+  cursor: default !important;
+}
+
+/* prevents go to previous and next month by clicking in calendar */
+.custom-calendar .ant-picker-calendar .ant-picker-panel .ant-picker-content {
+  pointer-events: none !important;
+}
+
+.custom-calendar .ant-picker-cell:hover {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.custom-calendar .ant-picker-cell-selected {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Remove the select and today effect */
+.custom-calendar
+  :where(.css-dev-only-do-not-override-8pc5hp)
+  .ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-cell-selected
+  .ant-picker-calendar-date
+  .ant-picker-calendar-date-value,
+.custom-calendar
+  :where(.css-dev-only-do-not-override-8pc5hp)
+  .ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-cell-selected:hover
+  .ant-picker-calendar-date
+  .ant-picker-calendar-date-value,
+.custom-calendar
+  :where(.css-dev-only-do-not-override-8pc5hp)
+  .ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-cell-selected
+  .ant-picker-calendar-date-today
+  .ant-picker-calendar-date-value,
+.custom-calendar
+  :where(.css-dev-only-do-not-override-8pc5hp)
+  .ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-cell-selected:hover
+  .ant-picker-calendar-date-today
+  .ant-picker-calendar-date-value {
+  color: #404040 !important;
+}
+
+.custom-calendar
+  .ant-picker-calendar.ant-picker-calendar-full
+  .ant-picker-calendar-date-today {
+  border-color: rgba(5, 5, 5, 0.06) !important;
+}
+
+.custom-calendar-popover .ant-popover-inner {
+  padding: 0 !important;
+}
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+  padding-inline-end: 0 !important;
+}
+
+.ant-select .ant-select-arrow {
+  color: #404040 !important;
+}

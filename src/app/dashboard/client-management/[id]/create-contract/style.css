@@ -1,0 +1,47 @@
+.ant-form-item-label > label {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  background-color: #ffffff !important;
+  border-color: #ff9900 !important;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #ffaa33 !important;
+}
+
+.ant-radio-inner::after {
+  background-color: #ff9900 !important;
+}
+
+.custom-radio-padding .ant-radio-wrapper span.ant-radio + * {
+  padding-inline-end: 0 !important;
+}
+
+.ant-upload:hover {
+  border-color: #f9991e !important;
+}
+
+.hide-asterisk .ant-form-item-required::before {
+  display: none !important;
+}
+
+.custom-radio-group .radio-button.radio-selected {
+  background-color: #f9991e;
+  color: #fff;
+  border-color: #f9991e;
+}
+
+.custom-radio-group .ant-radio-button-wrapper.radio-selected::before {
+  background-color: #f9991e !important;
+  border-color: #f9991e !important;
+}
+
+/* error handling for Collapse */
+.collapse-item.error-border {
+  border: 1px solid red !important;
+  border-radius: 4px !important;
+}

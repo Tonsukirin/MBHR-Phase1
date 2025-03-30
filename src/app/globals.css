@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  body {
+    color: #404040;
+  }
+}
+
+html,
+body {
+  font-family: var(--font-noto-sans-thai);
+  overflow: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.ant-form-item-required::before {
+  content: '*';
+  font-family: 'SimSong', '宋体', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.ant-typography {
+  display: flex;
+  align-items: center;
+  line-height: 1; /* Adjust alignment */
+  font-family: 'SimSong', '宋体', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.ant-menu-item-selected {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #0ba5ec;
+  }
+}
+
+.ant-menu-item {
+  padding-left: 20px;
+}
+
+.no-empty-image .ant-empty-image {
+  display: none !important;
+}
+
+.ant-table-wrapper .ant-table-column-sorter-up.active,
+.ant-table-wrapper .ant-table-column-sorter-down.active {
+  color: #f9991e !important;
+}
+
+/* disable selecting header of table */
+.ant-table-thead > tr > th {
+  user-select: none;
+}

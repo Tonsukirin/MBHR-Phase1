@@ -1,0 +1,11 @@
+.ant-table-tbody > tr > td {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ant-table-thead > tr > th {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}

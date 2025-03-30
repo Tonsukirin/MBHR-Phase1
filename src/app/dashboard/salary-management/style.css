@@ -1,0 +1,11 @@
+.ant-tabs-tab.ant-tabs-tab-active {
+  font-weight: 300 !important;
+}
+
+.ant-tabs-tab {
+  font-weight: 300 !important;
+}
+
+.ant-tabs-top > .ant-tabs-nav::before {
+  border-bottom: none !important;
+}

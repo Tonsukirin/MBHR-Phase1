@@ -1,0 +1,92 @@
+.custom-time-range-picker {
+  .ant-picker-time-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ant-picker-time-panel-cell {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .ant-picker-footer {
+    padding: 8px 16px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .ant-picker-footer > button {
+    width: 100%;
+    background-color: #f9991e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+.custom-time-range-picker
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-disabled {
+  display: none;
+}
+
+.custom-time-range-picker .ant-picker-time-panel {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.custom-time-range-picker .ant-picker-time-panel-column {
+  height: 200px;
+  scrollbar-width: thin;
+  overflow-y: scroll;
+}
+
+.custom-time-range-picker .ant-picker-time-panel-column > li {
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  color: #000;
+}
+
+.custom-time-range-picker .ant-picker-time-panel-column > li:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+/* .custom-time-range-picker
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected {
+  background-color: #f9991e;
+  color: #fff;
+} */
+
+.custom-time-range-picker .ant-picker-footer {
+  padding: 8px;
+  text-align: center;
+}
+
+.custom-time-range-picker .ant-btn-primary {
+  background-color: #f9991e !important;
+  border-color: #f9991e !important;
+}
+
+.custom-time-range-picker .ant-btn-primary:disabled {
+  background-color: #f5f5f5 !important;
+  border-color: #d9d9d9 !important;
+}
+
+.has-values .ant-picker-suffix {
+  color: black !important;
+}
+
+.ant-picker-outlined.ant-picker-status-error:not(.has-values)
+  .ant-picker-suffix {
+  color: #d9d9d9 !important;
+}
+
+.ant-picker-outlined.ant-picker-status-error {
+  border-color: #d9d9d9 !important;
+}

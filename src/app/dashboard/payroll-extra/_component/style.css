@@ -1,0 +1,43 @@
+.custom-row {
+  background-color: transparent !important;
+}
+
+.custom-row.even-row td {
+  background-color: #ffffff !important;
+}
+
+.custom-row.odd-row td {
+  background-color: #fafafa !important;
+}
+
+.custom-row.even-row {
+  background-color: #ffffff !important;
+}
+
+.custom-row.odd-row {
+  background-color: #fafafa !important;
+}
+
+.ant-table-wrapper.no-data .ant-table-tbody > tr > td {
+  padding: 0 !important;
+}
+
+td.editing-cell {
+  padding-top: 11.5px !important;
+  padding-bottom: 11.5px !important;
+}
+
+/* remove margin when there is no validation text */
+div.ant-form-item-margin-offset {
+  margin-bottom: 0px !important;
+}
+
+.ant-table-footer {
+  border-bottom: #f5f5f5 solid 1px !important;
+  background-color: transparent !important;
+}
+
+.ant-table-wrapper.editing-row-style .ant-table-footer {
+  padding: 0px !important;
+  border-bottom: none !important;
+}

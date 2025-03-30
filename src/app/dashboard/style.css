@@ -1,0 +1,13 @@
+.ant-card.medium-card .ant-card-body {
+  padding: 16px !important;
+}
+
+.ant-btn-variant-solid {
+  color: #fff;
+  background: #f9991e !important;
+}
+
+.ant-btn-variant-solid:hover {
+  color: #fff;
+  background: #fea32c !important;
+}
