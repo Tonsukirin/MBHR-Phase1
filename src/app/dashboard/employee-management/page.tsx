@@ -16,6 +16,7 @@ import buddhistEra from 'dayjs/plugin/buddhistEra';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import { EmployeeResponse } from '../../../../backend/employee';
+import './style.css';
 dayjs.extend(buddhistEra);
 dayjs.locale('th');
 
@@ -43,7 +44,7 @@ const EmployeeManagement = () => {
       render: (text: string) => <span>{text}</span>,
     },
     {
-      title: 'ชื่อ-นามสกุล',
+      title: 'ชื่อ - นามสกุล',
       render: (record: EmployeeResponse) => {
         return (
           <span>
@@ -177,7 +178,7 @@ const EmployeeManagement = () => {
     fetchData(page);
   };
 
-  const handleRowClick = (record: any) => {
+  const handleRowClick = (record: EmployeeResponse) => {
     router.push(`/dashboard/employee-management/${record.id}`);
   };
 
@@ -242,6 +243,9 @@ const EmployeeManagement = () => {
               dataSource={tableData}
               pagination={false}
               rowKey="id"
+              rowClassName={(_, index) =>
+                index % 2 === 0 ? 'bg-[]' : 'bg-[#FAFAFA]'
+              }
               onRow={record => ({
                 onClick: () => handleRowClick(record),
               })}

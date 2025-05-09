@@ -24,8 +24,8 @@ import './style.css';
 dayjs.extend(buddhistEra);
 dayjs.locale('th');
 
-const EmployeeOverview = ({ params }: { params: { Id: number } }) => {
-  const id = params.Id;
+const EmployeeOverview = ({ params }: { params: { id: number } }) => {
+  const id = params.id;
   const [loading, setLoading] = useState(false);
   const [employeeData, setEmployeeData] = useState<EmployeeResponse | null>(
     null
@@ -166,20 +166,21 @@ const EmployeeOverview = ({ params }: { params: { Id: number } }) => {
     },
   ];
 
+  const fetchData = async () => {
+    console.log('id is: ', id);
+    setLoading(true);
+    try {
+      const response = await getEmployeeById(id);
+      console.log(response);
+      setEmployeeData(response.data);
+    } catch (error) {
+      console.error('Error fetching employee data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      console.log('id is: ', id);
-      setLoading(true);
-      try {
-        const response = await getEmployeeById(id);
-        console.log(response);
-        setEmployeeData(response.data);
-      } catch (error) {
-        console.error('Error fetching employee data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchData();
   }, [id]);
 

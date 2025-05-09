@@ -72,3 +72,17 @@ body {
 .ant-table-thead > tr > th {
   user-select: none;
 }
+
+/* Hide scrollbar in all antd table */
+.ant-table-body::-webkit-scrollbar {
+  display: none;
+}
+
+.ant-table-body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ant-table-wrapper td.ant-table-column-sort {
+  background: none !important;
+}

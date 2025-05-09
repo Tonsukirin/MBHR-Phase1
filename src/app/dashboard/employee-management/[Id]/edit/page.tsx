@@ -80,13 +80,7 @@ export interface UpdateEmployeeRequestApi
   };
 }
 
-interface ParamsType {
-  params: {
-    Id: number;
-  };
-}
-
-const EditEmployeeInfo = (params: ParamsType) => {
+const EditEmployeeInfo = ({ params }: { params: { id: number } }) => {
   const [loading, setLoading] = useState(false);
   const [isSingle, setIsSingle] = useState(true);
   const router = useRouter();
@@ -108,7 +102,7 @@ const EditEmployeeInfo = (params: ParamsType) => {
   const [pendingNavigation, setPendingNavigation] = useState<
     (() => void) | null
   >(null);
-  const id = params.params.Id;
+  const id = params.id;
 
   //navigation section
   // Intercept navigation and show modal
@@ -249,7 +243,7 @@ const EditEmployeeInfo = (params: ParamsType) => {
       }
     };
     fetchEmployeeData();
-  });
+  }, []);
 
   const handleLeavePage = () => {
     setIsModalVisible(false);

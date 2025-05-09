@@ -1,8 +1,10 @@
 import api from '../api';
 
-export const getAllClient = async (page: number, limit: number) => {
+export const getAllClient = async (page?: number, limit?: number) => {
   try {
-    const response = await api.get(`/clients?page=${page}&limit=${limit}`);
+    const response = await api.get(
+      `/clients${page ? `?page=${page}` : ''}${limit ? `&limit=${limit}` : ''}`
+    );
     return response.data;
   } catch (error) {
     throw error;

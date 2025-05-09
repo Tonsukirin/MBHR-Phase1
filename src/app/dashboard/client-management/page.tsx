@@ -11,7 +11,7 @@ import {
 import { Breadcrumb, Pagination, Spin, Table, TableColumnsType } from 'antd';
 import Search from 'antd/es/input/Search';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   ClientsResponse,
   CreateClientRequest,
@@ -107,35 +107,38 @@ const ClientManagement = () => {
   };
 
   //real API
-  const fetchClients = async (page: number, limit: number) => {
-    setLoading(true);
-    try {
-      const response = await getAllClient(page, limit);
-      const { clients, total } = response.data;
+  const fetchClients = useCallback(
+    async (page: number, limit: number) => {
+      setLoading(true);
+      try {
+        const response = await getAllClient(page, limit);
+        const { clients, total } = response.data;
 
-      const transformedData = clients.map((client: ClientsResponse) => ({
-        ...client,
-        id: client.id,
-        clientName: client.name,
-        location: `${
-          client.address.building === null
-            ? client.address.subDistrict + ', ' + client.address.district
-            : client.address.building + ', ' + client.address.district
-        }`,
-        contactName: client.contactPerson[0]?.name || 'N/A',
-        phoneNum: client.contactPerson[0]?.phone || 'N/A',
-        contractAmount: Array.isArray(client.clientContract)
-          ? client.clientContract.length
-          : 0,
-      }));
-      setTableData(transformedData);
-      setTotalRows(total);
-    } catch (error) {
-      console.error('Error fetching clients:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+        const transformedData = clients.map((client: ClientsResponse) => ({
+          ...client,
+          id: client.id,
+          clientName: client.name,
+          location: `${
+            client.address.building === null
+              ? client.address.subDistrict + ', ' + client.address.district
+              : client.address.building + ', ' + client.address.district
+          }`,
+          contactName: client.contactPerson[0]?.name || 'N/A',
+          phoneNum: client.contactPerson[0]?.phone || 'N/A',
+          contractAmount: Array.isArray(client.clientContract)
+            ? client.clientContract.length
+            : 0,
+        }));
+        setTableData(transformedData);
+        setTotalRows(total);
+      } catch (error) {
+        console.error('Error fetching clients:', error);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [rowsPerPage]
+  );
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -180,7 +183,7 @@ const ClientManagement = () => {
     if (rowsPerPage !== null) {
       fetchClients(currentPage, rowsPerPage);
     }
-  }, [currentPage, rowsPerPage]);
+  }, [currentPage, rowsPerPage, fetchClients]);
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -231,16 +234,19 @@ const ClientManagement = () => {
             />
           </div>
 
-          <div id="table-container" className="flex-1">
+          <div id="table-container" className="flex-1 my-scroll-container">
             <Table<ClientsResponse>
               columns={columns}
               dataSource={tableData}
               pagination={false}
+              rowClassName={(_, index) =>
+                index % 2 === 0 ? 'bg-[]' : 'bg-[#FAFAFA]'
+              }
               rowKey="id"
               onRow={record => ({
                 onClick: () => handleRowClick(record),
               })}
-              scroll={{ y: 'calc(100% - 100px)' }} // Handle vertical scrolling if necessary
+              scroll={{ y: 'calc(100% - 100px)' }}
             />
           </div>
 

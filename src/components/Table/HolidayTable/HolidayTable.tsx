@@ -270,6 +270,8 @@ const HolidayTable = () => {
     return !row.holiday && !row.holidayName;
   };
 
+  const now = dayjs();
+
   const columns = [
     {
       title: 'ลำดับ',
@@ -283,6 +285,12 @@ const HolidayTable = () => {
       dataIndex: 'holiday',
       key: 'holiday',
       width: 160,
+      sorter: (a: RowData, b: RowData) => {
+        const da = Math.abs(now.diff(dayjs(a.holiday)));
+        const db = Math.abs(now.diff(dayjs(b.holiday)));
+        return da - db;
+      },
+      // defaultSortOrder: 'ascend',
       render: (holiday: string) => {
         return holiday ? dayjs(holiday).format('DD/MM/BBBB') : '';
       },
@@ -435,7 +443,7 @@ const HolidayTable = () => {
       (a, b) => new Date(a.holiday).getTime() - new Date(b.holiday).getTime()
     );
     setData(sortedData);
-  }, []);
+  }, []); //depency array updates after every table save
 
   return (
     <div>
@@ -485,6 +493,7 @@ const HolidayTable = () => {
           <div className="flex gap-10 mb-6">
             <span className="text-14 text-inactive">รูปแบบวันหยุด</span>
             <Radio.Group
+              className="flex gap-4"
               value={holidayType}
               onChange={e => setHolidayType(e.target.value)}
             >
